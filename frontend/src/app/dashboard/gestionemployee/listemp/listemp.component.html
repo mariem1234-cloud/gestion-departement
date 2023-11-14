@@ -1,0 +1,59 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <h1>List employee</h1>
+        </div>
+        <div class="col-lg-2 ms-auto mt-2">
+            <button class="btn btn-dark" routerLink="/dashboard/gestionemployee/ajoutemployee">Ajout</button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-lg-6">
+        <table class="table">
+            <thead >
+                <tr>
+                    <th>#</th>
+                    <th>image</th>
+                    <th>name</th>
+                    <th>lastname</th>
+                    <th>email</th>
+                    <th>tel</th>
+                    <th>address</th>
+                    <th>departement</th>
+                    <th>option</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>#</th>
+                    <th>image</th>
+                    <th>name</th>
+                    <th>lastname</th>
+                    <th>email</th>
+                    <th>tel</th>
+                    <th>address</th>
+                    <th>departement</th>
+                    <th>option</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr *ngFor="let item of emps; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>
+                        <img [src]="'http://127.0.0.1:3000/getimage/' + item.image" style="width: 4em;" alt="">
+                    </td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.lastname }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.tel }}</td>
+                    <td>{{ item.address }}</td>
+                    <td>{{ item.dep[0].name+','+item.dep[0].etage+','+item.dep[0].salle }}</td>
+                    <td>
+                        <button (click)="delete(item._id)" class="btn btn-danger">Delete</button>
+                        <button class="btn btn-info ms-2" [routerLink]="['/dashboard/gestionemployee/updateemployee', item._id]">Update</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div></div>
+</div>

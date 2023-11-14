@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h1> Update employee</h1>
+
+<div class="row">
+
+<div class="col-lg-8 mx-auto" >
+    <input [(ngModel)]="emp.name" type="text" class="form-control m-2" placeholder="name">
+    <input [(ngModel)]="emp.lastname" type="text" class="form-control m-2" placeholder="lastname">
+    <input [(ngModel)]="emp.email" type="text" class="form-control m-2" placeholder="email">
+    <input [(ngModel)]="emp.tel" type="text" class="form-control m-2" placeholder="tel">
+    <input [(ngModel)]="emp.address" type="text" class="form-control m-2" placeholder="address">
+    <input type="file" class="form-control m-2" >
+<select [(ngModel)]="emp.idDep"  class="form-select m-2" >
+    <option *ngFor="let item of deps" [value]="item._id">{{item.name}}</option>
+    
+</select>
+
+
+    <button (click)="update()" class="btn btn-dark form-control m-2">Create</button>
+    
+</div>
+</div>
+
+
+
+</div>
+
+
